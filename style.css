@@ -12,13 +12,15 @@
 
 :root {
   --bg: #F8F8F6;
-  --bg-alt: #F0F0ED;
+  --bg-alt: #F0F2F5;
   --text-primary: #111111;
-  --text-secondary: #777777;
-  --text-tertiary: #999999;
-  --accent: #2C2C2C;
-  --border: #E0DED9;
-  --border-light: #ECEAE5;
+  --text-secondary: #5A626A;
+  --text-tertiary: #8A949E;
+  --accent: #1A2838; /* Deep Midnight Slate */
+  --accent-light: #EBF1F6;
+  --accent-hover: #26384D;
+  --border: #DCE2E8;
+  --border-light: #EAEEF3;
   --white: #FFFFFF;
   --black: #111111;
 
@@ -195,10 +197,10 @@ ul, ol {
 
 .section-label {
   font-size: var(--fs-label);
-  font-weight: 500;
-  letter-spacing: 0.15em;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--text-tertiary);
+  color: var(--accent);
   margin-bottom: var(--space-lg);
 }
 
@@ -244,10 +246,10 @@ ul, ol {
 
 .hero-label {
   font-size: var(--fs-label);
-  font-weight: 500;
-  letter-spacing: 0.2em;
+  font-weight: 600;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--text-tertiary);
+  color: var(--accent);
   margin-bottom: var(--space-md);
 }
 
@@ -279,7 +281,7 @@ ul, ol {
   color: var(--text-primary);
   margin-bottom: var(--space-lg);
   max-width: 520px;
-  border-left: 2px solid var(--border);
+  border-left: 2px solid var(--accent);
   padding-left: var(--space-md);
 }
 
@@ -304,12 +306,12 @@ ul, ol {
 }
 
 .btn-primary {
-  background-color: var(--black);
+  background-color: var(--accent);
   color: var(--white);
 }
 
 .btn-primary:hover {
-  background-color: var(--accent);
+  background-color: var(--accent-hover);
   transform: translateY(-1px);
 }
 
@@ -320,7 +322,8 @@ ul, ol {
 }
 
 .btn-secondary:hover {
-  border-color: var(--text-primary);
+  border-color: var(--accent);
+  color: var(--accent);
   transform: translateY(-1px);
 }
 
@@ -604,6 +607,8 @@ ul, ol {
 .philosophy {
   padding: var(--space-3xl) 0;
   text-align: center;
+  background-color: var(--accent);
+  color: var(--white);
 }
 
 .philosophy-quote {
@@ -611,7 +616,7 @@ ul, ol {
   font-weight: 300;
   line-height: 1.4;
   letter-spacing: -0.02em;
-  color: var(--text-primary);
+  color: #F8F8F6;
   max-width: 800px;
   margin: 0 auto var(--space-md);
   font-style: italic;
@@ -619,10 +624,10 @@ ul, ol {
 
 .philosophy-attribution {
   font-size: var(--fs-label);
-  font-weight: 500;
-  letter-spacing: 0.15em;
+  font-weight: 600;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--text-tertiary);
+  color: #A6B8CB;
 }
 
 
@@ -662,10 +667,10 @@ ul, ol {
 
 .contact-row-label {
   font-size: var(--fs-label);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--text-tertiary);
+  color: var(--accent);
 }
 
 .contact-row-value {
@@ -680,7 +685,7 @@ ul, ol {
 }
 
 .contact-row-value a:hover {
-  border-color: var(--text-primary);
+  border-color: var(--accent);
 }
 
 .contact-actions {
@@ -731,18 +736,26 @@ ul, ol {
 }
 
 .initiative-card {
-  padding: var(--space-lg) 0;
-  border-top: 1px solid var(--border);
+  padding: var(--space-lg);
+  border-top: 2px solid var(--border);
+  background-color: var(--white);
   display: flex;
   flex-direction: column;
+  transition: border-top-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.initiative-card:hover {
+  border-top-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(26, 40, 56, 0.05);
 }
 
 .initiative-tag {
   font-size: var(--fs-label);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--text-tertiary);
+  color: var(--accent);
   margin-bottom: var(--space-xs);
 }
 
