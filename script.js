@@ -163,4 +163,116 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+
+  // --- Executive Stats Detail Modal ---
+  const modal = document.getElementById('stat-modal');
+  const modalTitle = document.getElementById('modal-title');
+  const modalBody = document.getElementById('modal-body');
+  const modalCloseBtns = document.querySelectorAll('.modal-close, .modal-backdrop');
+
+  const modalDetails = {
+    experience: {
+      title: "20+ Years of Enterprise IT Leadership",
+      html: `
+        <p>A proven track record spanning over two decades of directing large-scale technology initiatives, establishing enterprise PMO standards, and leading digital transformation across global corporate environments.</p>
+        
+        <h4>Key Experience Highlights:</h4>
+        <ul>
+          <li><strong>ADM (Cincinnati, Ohio)</strong> — Technology Program Manager leading enterprise digital transformation, core financial platform modernizations, and cross-functional team governance.</li>
+          <li><strong>Senior Program & Portfolio Lead</strong> — Directed complex enterprise portfolio initiatives, ERP integrations, PMO structure alignment, and multi-million-dollar technology investments.</li>
+          <li><strong>Technology Delivery Manager</strong> — Spearheaded technical delivery teams, business process optimization, and legacy application migration strategies.</li>
+        </ul>
+
+        <h4>Leadership Core Strengths:</h4>
+        <p>Strategic technology roadmapping, cross-departmental alignment, executive stakeholder engagement, and technical talent development.</p>
+      `
+    },
+    systems: {
+      title: "Enterprise Financial Systems & Platforms",
+      html: `
+        <p>Specialized domain expertise in governing, modernizing, and deploying mission-critical financial applications and enterprise resource planning (ERP) platforms.</p>
+        
+        <h4>Focus Areas:</h4>
+        <ul>
+          <li><strong>ERP & Financial Modernization:</strong> Streamlining legacy financial architecture into integrated enterprise platforms.</li>
+          <li><strong>Data & Reporting Integrity:</strong> Ensuring high visibility, compliance, and accurate cross-functional reporting across business units.</li>
+          <li><strong>Process Optimization:</strong> Reducing operational friction and accelerating financial close and forecasting workflows.</li>
+        </ul>
+      `
+    },
+    delivery: {
+      title: "Global Cross-Functional Team Delivery",
+      html: `
+        <p>Building, guiding, and scaling high-performing cross-functional technology teams across distributed enterprise environments.</p>
+        
+        <h4>Delivery Frameworks & Approach:</h4>
+        <ul>
+          <li><strong>Hybrid & Agile Methodologies:</strong> Tailoring project delivery frameworks to align with complex corporate governance requirements.</li>
+          <li><strong>Vendor & Partner Integration:</strong> Managing strategic third-party relationships, contract negotiations, and quality control.</li>
+          <li><strong>Team Mentorship:</strong> Fostering a high-trust, high-accountability culture that empowers technical teams to perform at their best.</li>
+        </ul>
+      `
+    },
+    alignment: {
+      title: "100% Strategic Business Alignment",
+      html: `
+        <p>Ensuring every IT dollar, program milestone, and technical architecture decision serves a clear corporate strategic objective.</p>
+        
+        <h4>Strategic Alignment Principles:</h4>
+        <ul>
+          <li><strong>C-Suite & Stakeholder Communication:</strong> Translating complex technical roadmaps into business outcomes for executive leadership.</li>
+          <li><strong>Value Realization:</strong> Measuring program success strictly against business value, operational efficiency, and ROI.</li>
+          <li><strong>Risk & Governance Controls:</strong> Proactive risk identification and proactive change management across organizational business units.</li>
+        </ul>
+      `
+    }
+  };
+
+  const openModal = (statId) => {
+    const detail = modalDetails[statId];
+    if (detail && modal) {
+      modalTitle.textContent = detail.title;
+      modalBody.innerHTML = detail.html;
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  const closeModal = () => {
+    if (modal) {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+  };
+
+  // Add click & keyboard events to stat items
+  statItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const statId = item.getAttribute('data-stat-id');
+      if (statId) openModal(statId);
+    });
+
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const statId = item.getAttribute('data-stat-id');
+        if (statId) openModal(statId);
+      }
+    });
+  });
+
+  // Modal close triggers
+  modalCloseBtns.forEach(btn => {
+    btn.addEventListener('click', closeModal);
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+
 });

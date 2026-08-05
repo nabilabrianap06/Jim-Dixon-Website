@@ -94,21 +94,25 @@
   <section class="stats-section" id="stats">
     <div class="container">
       <div class="stats-grid">
-        <div class="stat-item">
+        <div class="stat-item" data-stat-id="experience" tabindex="0" role="button" aria-label="View 20+ years experience details">
           <p class="stat-number" data-target="20" data-suffix="+">0</p>
           <p class="stat-label">Years of IT &amp; Program Leadership</p>
+          <span class="stat-action">View Experience Details &rarr;</span>
         </div>
-        <div class="stat-item">
+        <div class="stat-item" data-stat-id="systems" tabindex="0" role="button" aria-label="View financial systems details">
           <p class="stat-number stat-text">Enterprise</p>
           <p class="stat-label">Financial Systems &amp; Platforms</p>
+          <span class="stat-action">View Systems Details &rarr;</span>
         </div>
-        <div class="stat-item">
+        <div class="stat-item" data-stat-id="delivery" tabindex="0" role="button" aria-label="View team delivery details">
           <p class="stat-number stat-text">Global</p>
           <p class="stat-label">Cross-Functional Team Delivery</p>
+          <span class="stat-action">View Delivery Details &rarr;</span>
         </div>
-        <div class="stat-item">
+        <div class="stat-item" data-stat-id="alignment" tabindex="0" role="button" aria-label="View business alignment details">
           <p class="stat-number" data-target="100" data-suffix="%">0</p>
           <p class="stat-label">Strategic Business Alignment</p>
+          <span class="stat-action">View Alignment Details &rarr;</span>
         </div>
       </div>
     </div>
@@ -546,6 +550,27 @@
       </div>
     </div>
   </footer>
+
+
+  <!-- ===== Executive Detail Modal ===== -->
+  <div id="stat-modal" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal-title">
+    <div class="modal-backdrop"></div>
+    <div class="modal-box">
+      <div class="modal-header">
+        <span class="modal-label">Executive Detail</span>
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+      </div>
+      <h3 class="modal-title" id="modal-title">Career Experience &amp; Leadership</h3>
+      <div class="modal-body" id="modal-body">
+        <!-- Content dynamically injected via JS -->
+      </div>
+      <div class="modal-footer">
+        <a href="https://www.linkedin.com/in/jimadixon/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          View LinkedIn Profile <span class="btn-arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
 
 
   <script src="script.js"></script>
