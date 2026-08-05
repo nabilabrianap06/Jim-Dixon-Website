@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const updateCount = (currentTime) => {
       const elapsedTime = currentTime - startTime;
       const progress = Math.min(elapsedTime / duration, 1);
-      // Ease-out cubic formula for smooth count up
       const easeOutProgress = 1 - Math.pow(1 - progress, 3);
       const currentVal = Math.floor(easeOutProgress * target);
 
@@ -172,57 +171,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const modalDetails = {
     experience: {
-      title: "20+ Years of Enterprise IT Leadership",
+      title: "20+ Years in Enterprise IT Leadership",
       html: `
-        <p>A proven track record spanning over two decades of directing large-scale technology initiatives, establishing enterprise PMO standards, and leading digital transformation across global corporate environments.</p>
+        <p>Over two decades directing large-scale technology initiatives, establishing program governance, and leading digital transformation across corporate environments.</p>
         
-        <h4>Key Experience Highlights:</h4>
+        <h4>Career Highlights:</h4>
         <ul>
-          <li><strong>ADM (Cincinnati, Ohio)</strong> — Technology Program Manager leading enterprise digital transformation, core financial platform modernizations, and cross-functional team governance.</li>
-          <li><strong>Senior Program & Portfolio Lead</strong> — Directed complex enterprise portfolio initiatives, ERP integrations, PMO structure alignment, and multi-million-dollar technology investments.</li>
-          <li><strong>Technology Delivery Manager</strong> — Spearheaded technical delivery teams, business process optimization, and legacy application migration strategies.</li>
+          <li><strong>ADM (Cincinnati, Ohio):</strong> Technology Program Manager leading digital transformation, financial platform modernizations, and cross-functional team governance.</li>
+          <li><strong>Senior Program &amp; Portfolio Lead:</strong> Managed complex program portfolios, ERP implementations, and multi-location IT initiatives.</li>
+          <li><strong>Technology Delivery Manager:</strong> Led technical delivery teams, optimized business processes, and modernized legacy application architectures.</li>
         </ul>
 
-        <h4>Leadership Core Strengths:</h4>
-        <p>Strategic technology roadmapping, cross-departmental alignment, executive stakeholder engagement, and technical talent development.</p>
+        <h4>Core Competencies:</h4>
+        <p>Strategic roadmapping, cross-departmental alignment, executive stakeholder communication, and talent development.</p>
       `
     },
     systems: {
       title: "Enterprise Financial Systems & Platforms",
       html: `
-        <p>Specialized domain expertise in governing, modernizing, and deploying mission-critical financial applications and enterprise resource planning (ERP) platforms.</p>
+        <p>Direct experience modernizing and deploying mission-critical financial applications and enterprise resource planning (ERP) platforms.</p>
         
         <h4>Focus Areas:</h4>
         <ul>
-          <li><strong>ERP & Financial Modernization:</strong> Streamlining legacy financial architecture into integrated enterprise platforms.</li>
-          <li><strong>Data & Reporting Integrity:</strong> Ensuring high visibility, compliance, and accurate cross-functional reporting across business units.</li>
-          <li><strong>Process Optimization:</strong> Reducing operational friction and accelerating financial close and forecasting workflows.</li>
+          <li><strong>Financial Platform Modernization:</strong> Streamlining legacy financial tools into scalable enterprise systems.</li>
+          <li><strong>Data and Reporting Accuracy:</strong> Ensuring clear operational visibility and accurate reporting across business units.</li>
+          <li><strong>Workflow Optimization:</strong> Removing process bottlenecks in financial close and planning workflows.</li>
         </ul>
       `
     },
     delivery: {
-      title: "Global Cross-Functional Team Delivery",
+      title: "Global Cross-Functional Delivery",
       html: `
-        <p>Building, guiding, and scaling high-performing cross-functional technology teams across distributed enterprise environments.</p>
+        <p>Building and guiding cross-functional technology teams across distributed corporate environments.</p>
         
-        <h4>Delivery Frameworks & Approach:</h4>
+        <h4>Delivery Frameworks:</h4>
         <ul>
-          <li><strong>Hybrid & Agile Methodologies:</strong> Tailoring project delivery frameworks to align with complex corporate governance requirements.</li>
-          <li><strong>Vendor & Partner Integration:</strong> Managing strategic third-party relationships, contract negotiations, and quality control.</li>
-          <li><strong>Team Mentorship:</strong> Fostering a high-trust, high-accountability culture that empowers technical teams to perform at their best.</li>
+          <li><strong>Hybrid and Agile Models:</strong> Applying flexible delivery models that fit enterprise governance requirements.</li>
+          <li><strong>Vendor and Partner Management:</strong> Managing strategic partner relationships, contracts, and delivery standards.</li>
+          <li><strong>Team Mentorship:</strong> Fostering a supportive, high-accountability environment for technical teams.</li>
         </ul>
       `
     },
     alignment: {
-      title: "100% Strategic Business Alignment",
+      title: "100% Focus on Business Alignment",
       html: `
-        <p>Ensuring every IT dollar, program milestone, and technical architecture decision serves a clear corporate strategic objective.</p>
+        <p>Ensuring technology initiatives and program milestones directly support corporate business goals.</p>
         
-        <h4>Strategic Alignment Principles:</h4>
+        <h4>Key Focus:</h4>
         <ul>
-          <li><strong>C-Suite & Stakeholder Communication:</strong> Translating complex technical roadmaps into business outcomes for executive leadership.</li>
-          <li><strong>Value Realization:</strong> Measuring program success strictly against business value, operational efficiency, and ROI.</li>
-          <li><strong>Risk & Governance Controls:</strong> Proactive risk identification and proactive change management across organizational business units.</li>
+          <li><strong>Executive Communication:</strong> Translating technical roadmaps into clear business outcomes for leadership.</li>
+          <li><strong>Practical Outcomes:</strong> Measuring success by business value, efficiency gains, and ROI.</li>
+          <li><strong>Risk and Change Management:</strong> Identifying project risks early and guiding smooth organizational change.</li>
         </ul>
       `
     }
