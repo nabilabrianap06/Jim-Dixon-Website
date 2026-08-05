@@ -27,6 +27,9 @@
 </head>
 <body>
 
+  <!-- ===== Reading Progress Bar ===== -->
+  <div id="scroll-progress"></div>
+
   <!-- ===== Navigation ===== -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="container">
@@ -54,6 +57,10 @@
   <section class="hero" id="hero">
     <div class="container">
       <div class="hero-content">
+        <div class="hero-status-badge reveal">
+          <span class="status-dot"></span> Based in Cincinnati, OH · Open for Advisory &amp; Leadership
+        </div>
+
         <p class="hero-label reveal">Hello, I'm</p>
 
         <h1 class="hero-name reveal reveal-delay-1">Jim<br />Dixon</h1>
@@ -81,6 +88,31 @@
       <div class="hero-portrait reveal reveal-delay-2">
         <div class="hero-portrait-wrapper">
           <img src="portrait.jpg" alt="Jim Dixon — Technology Program Manager" width="440" height="587" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== Stats Row ===== -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <p class="stat-number">20+</p>
+          <p class="stat-label">Years of IT &amp; Program Leadership</p>
+        </div>
+        <div class="stat-item reveal reveal-delay-1">
+          <p class="stat-number">Enterprise</p>
+          <p class="stat-label">Financial Systems &amp; Platforms</p>
+        </div>
+        <div class="stat-item reveal reveal-delay-2">
+          <p class="stat-number">Global</p>
+          <p class="stat-label">Cross-Functional Team Delivery</p>
+        </div>
+        <div class="stat-item reveal reveal-delay-3">
+          <p class="stat-number">100%</p>
+          <p class="stat-label">Strategic Business Alignment</p>
         </div>
       </div>
     </div>
@@ -333,52 +365,123 @@
 
       <div class="expertise-grid reveal reveal-delay-3">
         <div class="expertise-item">
-          <span class="expertise-name">Program Management</span>
-          <span class="expertise-arrow">&rarr;</span>
+          <div class="expertise-header">
+            <span class="expertise-name">Program Management</span>
+            <span class="expertise-arrow">&rarr;</span>
+          </div>
+          <div class="expertise-drawer">
+            End-to-end program governance, scope control, and structured execution across multi-functional enterprise initiatives.
+          </div>
         </div>
+
         <div class="expertise-item">
-          <span class="expertise-name">Portfolio Management</span>
-          <span class="expertise-arrow">&rarr;</span>
+          <div class="expertise-header">
+            <span class="expertise-name">Portfolio Management</span>
+            <span class="expertise-arrow">&rarr;</span>
+          </div>
+          <div class="expertise-drawer">
+            Strategic prioritization, resource allocation, and value realization across concurrent IT investments.
+          </div>
         </div>
+
         <div class="expertise-item">
-          <span class="expertise-name">IT Strategy</span>
-          <span class="expertise-arrow">&rarr;</span>
+          <div class="expertise-header">
+            <span class="expertise-name">IT Strategy</span>
+            <span class="expertise-arrow">&rarr;</span>
+          </div>
+          <div class="expertise-drawer">
+            Unifying executive business objectives with actionable technology roadmaps and modern architecture direction.
+          </div>
         </div>
+
         <div class="expertise-item">
-          <span class="expertise-name">Digital Transformation</span>
-          <span class="expertise-arrow">&rarr;</span>
+          <div class="expertise-header">
+            <span class="expertise-name">Digital Transformation</span>
+            <span class="expertise-arrow">&rarr;</span>
+          </div>
+          <div class="expertise-drawer">
+            Guiding organizational change, process digitization, and core platform integration across business units.
+          </div>
         </div>
+
         <div class="expertise-item">
-          <span class="expertise-name">Financial Systems</span>
-          <span class="expertise-arrow">&rarr;</span>
+          <div class="expertise-header">
+            <span class="expertise-name">Financial Systems</span>
+            <span class="expertise-arrow">&rarr;</span>
+          </div>
+          <div class="expertise-drawer">
+            Deep domain expertise implementing and modernizing enterprise financial systems and ERP software.
+          </div>
         </div>
+
         <div class="expertise-item">
-          <span class="expertise-name">Enterprise Applications</span>
-          <span class="expertise-arrow">&rarr;</span>
+          <div class="expertise-header">
+            <span class="expertise-name">Enterprise Applications</span>
+            <span class="expertise-arrow">&rarr;</span>
+          </div>
+          <div class="expertise-drawer">
+            System architecture integration, scalable application delivery, and legacy software modernization.
+          </div>
         </div>
+
         <div class="expertise-item">
-          <span class="expertise-name">Vendor Management</span>
-          <span class="expertise-arrow">&rarr;</span>
+          <div class="expertise-header">
+            <span class="expertise-name">Vendor Management</span>
+            <span class="expertise-arrow">&rarr;</span>
+          </div>
+          <div class="expertise-drawer">
+            Strategic partner relationship management, contract negotiations, and external delivery quality control.
+          </div>
         </div>
+
         <div class="expertise-item">
-          <span class="expertise-name">Leadership</span>
-          <span class="expertise-arrow">&rarr;</span>
+          <div class="expertise-header">
+            <span class="expertise-name">Leadership</span>
+            <span class="expertise-arrow">&rarr;</span>
+          </div>
+          <div class="expertise-drawer">
+            Building high-performing teams, fostering accountability, and mentoring emerging technical leaders.
+          </div>
         </div>
+
         <div class="expertise-item">
-          <span class="expertise-name">Agile Delivery</span>
-          <span class="expertise-arrow">&rarr;</span>
+          <div class="expertise-header">
+            <span class="expertise-name">Agile Delivery</span>
+            <span class="expertise-arrow">&rarr;</span>
+          </div>
+          <div class="expertise-drawer">
+            Implementing hybrid &amp; Agile delivery frameworks tailored to complex enterprise operational models.
+          </div>
         </div>
+
         <div class="expertise-item">
-          <span class="expertise-name">Risk Management</span>
-          <span class="expertise-arrow">&rarr;</span>
+          <div class="expertise-header">
+            <span class="expertise-name">Risk Management</span>
+            <span class="expertise-arrow">&rarr;</span>
+          </div>
+          <div class="expertise-drawer">
+            Proactive risk identification, mitigation strategy planning, and enterprise operational compliance.
+          </div>
         </div>
+
         <div class="expertise-item">
-          <span class="expertise-name">Business Process Improvement</span>
-          <span class="expertise-arrow">&rarr;</span>
+          <div class="expertise-header">
+            <span class="expertise-name">Business Process Improvement</span>
+            <span class="expertise-arrow">&rarr;</span>
+          </div>
+          <div class="expertise-drawer">
+            Streamlining operational bottlenecks, eliminating workflow redundancies, and maximizing throughput.
+          </div>
         </div>
+
         <div class="expertise-item">
-          <span class="expertise-name">Technology Governance</span>
-          <span class="expertise-arrow">&rarr;</span>
+          <div class="expertise-header">
+            <span class="expertise-name">Technology Governance</span>
+            <span class="expertise-arrow">&rarr;</span>
+          </div>
+          <div class="expertise-drawer">
+            Establishing PMO delivery standards, compliance controls, and transparent executive reporting.
+          </div>
         </div>
       </div>
     </div>

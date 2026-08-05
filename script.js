@@ -1,9 +1,23 @@
 /* ============================================
    JIM DIXON — Portfolio Interactions
-   Subtle, almost invisible animations
+   Subtle, executive micro-interactions
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  // --- Reading Progress Bar ---
+  const progressBar = document.getElementById('scroll-progress');
+
+  const updateProgress = () => {
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (totalHeight > 0) {
+      const progress = (window.scrollY / totalHeight) * 100;
+      if (progressBar) {
+        progressBar.style.width = `${progress}%`;
+      }
+    }
+  };
+
 
   // --- Scroll Reveal ---
   const revealElements = document.querySelectorAll('.reveal');
@@ -23,9 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
   revealElements.forEach(el => revealObserver.observe(el));
 
 
-  // --- Nav scroll state ---
+  // --- Nav scroll state & progress ---
   const nav = document.querySelector('.nav');
-  let lastScroll = 0;
 
   const handleScroll = () => {
     const scrollY = window.scrollY;
@@ -36,10 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
       nav.classList.remove('scrolled');
     }
 
-    lastScroll = scrollY;
+    updateProgress();
   };
 
   window.addEventListener('scroll', handleScroll, { passive: true });
+  updateProgress();
 
 
   // --- Mobile menu ---
@@ -52,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.classList.toggle('open');
     });
 
-    // Close menu when a link is clicked
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navToggle.classList.remove('active');
@@ -71,6 +84,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const offset = 80;
         const top = target.getBoundingClientRect().top + window.scrollY - offset;
         window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+
+  // --- Core Expertise Accordion ---
+  const expertiseItems = document.querySelectorAll('.expertise-item');
+
+  expertiseItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const isExpanded = item.classList.contains('active');
+
+      // Close all other accordion items
+      expertiseItems.forEach(other => {
+        if (other !== item) {
+          other.classList.remove('active');
+        }
+      });
+
+      // Toggle current item
+      if (isExpanded) {
+        item.classList.remove('active');
+      } else {
+        item.classList.add('active');
       }
     });
   });
