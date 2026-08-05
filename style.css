@@ -589,6 +589,15 @@ body::before {
   padding: var(--space-md) var(--space-sm);
   border-left: 2px solid var(--accent);
   padding-left: var(--space-md);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.stat-item.animated {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .stat-number {
@@ -598,6 +607,8 @@ body::before {
   line-height: 1;
   margin-bottom: 0.5rem;
   letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  display: block;
 }
 
 .stat-label {
@@ -605,6 +616,14 @@ body::before {
   font-weight: 400;
   color: var(--text-secondary);
   line-height: 1.4;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 1s ease 0.3s, transform 1s ease 0.3s;
+}
+
+.stat-item.animated .stat-label {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* --- Expertise --- */

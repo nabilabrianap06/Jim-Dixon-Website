@@ -37,6 +37,59 @@ document.addEventListener('DOMContentLoaded', () => {
   revealElements.forEach(el => revealObserver.observe(el));
 
 
+  // --- Stats Counter & Fade-in Animation ---
+  const statItems = document.querySelectorAll('.stat-item');
+
+  const animateCounter = (el) => {
+    const target = parseInt(el.getAttribute('data-target'), 10);
+    const suffix = el.getAttribute('data-suffix') || '';
+    const duration = 1600; // 1.6s
+    const startTime = performance.now();
+
+    const updateCount = (currentTime) => {
+      const elapsedTime = currentTime - startTime;
+      const progress = Math.min(elapsedTime / duration, 1);
+      // Ease-out cubic formula for smooth count up
+      const easeOutProgress = 1 - Math.pow(1 - progress, 3);
+      const currentVal = Math.floor(easeOutProgress * target);
+
+      el.textContent = `${currentVal}${suffix}`;
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCount);
+      } else {
+        el.textContent = `${target}${suffix}`;
+      }
+    };
+
+    requestAnimationFrame(updateCount);
+  };
+
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const item = entry.target;
+        item.classList.add('animated');
+
+        const numberEl = item.querySelector('.stat-number[data-target]');
+        if (numberEl && !numberEl.classList.contains('counted')) {
+          numberEl.classList.add('counted');
+          animateCounter(numberEl);
+        }
+
+        statsObserver.unobserve(item);
+      }
+    });
+  }, {
+    threshold: 0.25
+  });
+
+  statItems.forEach((item, index) => {
+    item.style.transitionDelay = `${index * 0.15}s`;
+    statsObserver.observe(item);
+  });
+
+
   // --- Nav scroll state & progress ---
   const nav = document.querySelector('.nav');
 
@@ -96,14 +149,12 @@ document.addEventListener('DOMContentLoaded', () => {
     item.addEventListener('click', () => {
       const isExpanded = item.classList.contains('active');
 
-      // Close all other accordion items
       expertiseItems.forEach(other => {
         if (other !== item) {
           other.classList.remove('active');
         }
       });
 
-      // Toggle current item
       if (isExpanded) {
         item.classList.remove('active');
       } else {
