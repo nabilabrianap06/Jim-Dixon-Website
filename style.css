@@ -569,28 +569,6 @@ body::before {
   transition: width 0.1s ease-out;
 }
 
-/* Status Badge */
-.hero-status-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: var(--fs-small);
-  font-weight: 500;
-  color: var(--accent);
-  background-color: var(--accent-light);
-  border: 1px solid var(--border);
-  padding: 0.4rem 1rem;
-  border-radius: 100px;
-  margin-bottom: var(--space-md);
-}
-
-.status-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: #10B981;
-  display: inline-block;
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
 }
 
 /* Stats Section */
