@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `
     },
     systems: {
-      title: "Enterprise Financial Systems & Platforms",
+      title: "10+ Enterprise Financial Systems & ERP Initiatives",
       html: `
         <p>Direct experience modernizing and deploying mission-critical financial applications and enterprise resource planning (ERP) platforms.</p>
         
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `
     },
     delivery: {
-      title: "Global Cross-Functional Delivery",
+      title: "5+ Global & Cross-Functional Team Initiatives",
       html: `
         <p>Building and guiding cross-functional technology teams across distributed corporate environments.</p>
         
