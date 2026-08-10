@@ -419,90 +419,257 @@ ul, ol {
 }
 
 
-/* --- Experience Timeline --- */
-.timeline {
-  position: relative;
-  padding-left: var(--space-lg);
+/* ============================================
+   EXECUTIVE EDITORIAL PROFILE & CAREER ROWS
+   McKinsey / Deloitte / Stripe Consulting Style
+   ============================================ */
+
+/* --- Executive Profile Editorial (Unboxed) --- */
+.exec-editorial-block {
+  width: 100%;
+  margin-bottom: var(--space-xl);
 }
 
-.timeline::before {
+.exec-editorial-intro {
+  max-width: 960px;
+  margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
+}
+
+.exec-editorial-label {
+  display: inline-block;
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+
+.exec-editorial-text p {
+  font-size: clamp(1.2rem, 1.7vw, 1.45rem);
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 1.25rem;
+}
+
+.exec-editorial-text p:last-child {
+  margin-bottom: 0;
+  color: var(--text-secondary);
+}
+
+/* Editorial Pillars - Unboxed Grid */
+.exec-pillars-editorial {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border);
+}
+
+@media (min-width: 900px) {
+  .exec-pillars-editorial {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+}
+
+.exec-pillar-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.exec-pillar-index {
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  font-weight: 300;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.exec-pillar-category {
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: 0.75rem;
+}
+
+.exec-pillar-headline {
+  font-size: clamp(1.1rem, 1.35vw, 1.25rem);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--text-primary);
+  letter-spacing: -0.015em;
+  margin-bottom: 0.75rem;
+}
+
+.exec-pillar-desc {
+  font-size: var(--fs-small);
+  color: var(--text-secondary);
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+
+/* --- Career Experience Rows (Editorial Rows with Segmented Timeline Spine) --- */
+.exec-career-rows {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border);
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.exec-career-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: clamp(2.5rem, 4vw, 3.5rem) 0;
+  border-bottom: 1px solid var(--border-light);
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+@media (min-width: 900px) {
+  .exec-career-row {
+    grid-template-columns: 240px 1fr;
+    gap: 3.5rem;
+  }
+}
+
+/* Connecting Line Spine Segment for Each Row (Offset to the left) */
+.exec-career-row::before {
   content: '';
   position: absolute;
-  left: 0;
+  left: -1.75rem;
   top: 0;
   bottom: 0;
   width: 1px;
   background-color: var(--border);
+  z-index: 1;
 }
 
-.timeline-item {
+/* Row 1 (First): Line starts at the vertical center of the first badge */
+.exec-career-row:first-child::before {
+  top: calc(clamp(2.5rem, 4vw, 3.5rem) + 0.65rem);
+}
+
+/* Row 3 (Last): Line ends at the vertical center of the last badge */
+.exec-career-row:last-child::before {
+  bottom: auto;
+  height: calc(clamp(2.5rem, 4vw, 3.5rem) + 0.65rem);
+}
+
+.exec-row-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.exec-row-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background-color: var(--accent-light);
+  padding: 0.25rem 0.65rem;
+  border-radius: 2px;
   position: relative;
-  padding-bottom: var(--space-xl);
 }
 
-.timeline-item:last-child {
-  padding-bottom: 0;
-}
-
-.timeline-item::before {
+/* Timeline Solid Black Node Circle (Centered on the -1.75rem Spine Line) */
+.exec-row-badge::before {
   content: '';
   position: absolute;
-  left: calc(-1 * var(--space-lg));
-  top: 8px;
+  left: -1.75rem;
+  top: 50%;
+  transform: translate(-3px, -50%);
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background-color: var(--text-primary);
-  transform: translateX(-3px);
+  z-index: 2;
 }
 
-.timeline-company {
-  font-size: var(--fs-label);
+.exec-row-company {
+  font-size: var(--fs-small);
   font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: var(--text-tertiary);
-  margin-bottom: var(--space-xs);
+  margin-top: 0.25rem;
 }
 
-.timeline-role {
-  font-size: var(--fs-h2);
+.exec-row-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.exec-row-title {
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem);
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.25;
   letter-spacing: -0.02em;
   color: var(--text-primary);
-  margin-bottom: var(--space-md);
+  margin-bottom: 1rem;
 }
 
-.timeline-desc {
-  max-width: 600px;
+.exec-row-summary {
+  font-size: var(--fs-body);
   color: var(--text-secondary);
-  line-height: 1.85;
-  margin-bottom: var(--space-md);
+  line-height: 1.8;
+  font-weight: 300;
+  max-width: 760px;
+  margin-bottom: 1.75rem;
 }
 
-.timeline-responsibilities {
+.exec-row-details {
+  border-top: 1px solid var(--border-light);
+  padding-top: 1.25rem;
+}
+
+.exec-details-heading {
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: 1rem;
+}
+
+.exec-details-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.75rem var(--space-lg);
-  max-width: 700px;
+  grid-template-columns: 1fr;
+  gap: 0.65rem 2rem;
+  max-width: 760px;
 }
 
-.timeline-responsibilities li {
+@media (min-width: 640px) {
+  .exec-details-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.exec-details-list li {
   font-size: var(--fs-small);
   color: var(--text-secondary);
-  padding-left: 1rem;
+  line-height: 1.6;
   position: relative;
+  padding-left: 1.1rem;
 }
 
-.timeline-responsibilities li::before {
-  content: '';
+.exec-details-list li::before {
+  content: '—';
   position: absolute;
   left: 0;
-  top: 0.65em;
-  width: 4px;
-  height: 1px;
-  background-color: var(--text-tertiary);
+  color: var(--text-tertiary);
+  font-weight: 300;
 }
 
 
