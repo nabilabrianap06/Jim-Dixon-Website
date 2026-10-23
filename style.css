@@ -424,94 +424,87 @@ ul, ol {
    McKinsey / Deloitte / Stripe Consulting Style
    ============================================ */
 
-/* --- Executive Profile Editorial (Unboxed) --- */
-.exec-editorial-block {
-  width: 100%;
-  margin-bottom: var(--space-xl);
+/* --- Executive Summary Section (Subtle Editorial Alignment) --- */
+.exec-summary-section {
+  margin-bottom: clamp(3rem, 5vw, 4.5rem);
+  padding-bottom: clamp(2rem, 3.5vw, 3rem);
+  border-bottom: 1px solid var(--border);
 }
 
-.exec-editorial-intro {
-  max-width: 960px;
-  margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
+.exec-summary-lead {
+  max-width: 920px;
+  margin-bottom: clamp(2rem, 3.5vw, 3rem);
 }
 
-.exec-editorial-label {
+.exec-summary-label {
   display: inline-block;
   font-size: var(--fs-label);
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
-.exec-editorial-text p {
-  font-size: clamp(1.2rem, 1.7vw, 1.45rem);
-  font-weight: 300;
-  line-height: 1.75;
+.exec-summary-statement {
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
   color: var(--text-primary);
-  letter-spacing: -0.01em;
-  margin-bottom: 1.25rem;
+  margin: 0;
 }
 
-.exec-editorial-text p:last-child {
-  margin-bottom: 0;
-  color: var(--text-secondary);
-}
-
-/* Editorial Pillars - Unboxed Grid */
-.exec-pillars-editorial {
+.exec-summary-points {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2.5rem;
-  padding-top: 2.5rem;
-  border-top: 1px solid var(--border);
+  gap: 2rem;
 }
 
-@media (min-width: 900px) {
-  .exec-pillars-editorial {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+@media (min-width: 768px) {
+  .exec-summary-points {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 3.5rem;
   }
 }
 
-.exec-pillar-col {
+.exec-point-item {
+  display: grid;
+  grid-template-columns: 2.25rem 1fr;
+  gap: 1.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.exec-point-index {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  padding-top: 0.15rem;
+}
+
+.exec-point-body {
   display: flex;
   flex-direction: column;
+  gap: 0.35rem;
 }
 
-.exec-pillar-index {
-  font-size: clamp(1.6rem, 2.2vw, 2rem);
-  font-weight: 300;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 0.75rem;
-  letter-spacing: -0.02em;
-}
-
-.exec-pillar-category {
-  font-size: var(--fs-label);
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--text-tertiary);
-  margin-bottom: 0.75rem;
-}
-
-.exec-pillar-headline {
-  font-size: clamp(1.1rem, 1.35vw, 1.25rem);
+.exec-point-title {
+  font-size: 1.05rem;
   font-weight: 600;
   line-height: 1.35;
+  letter-spacing: -0.01em;
   color: var(--text-primary);
-  letter-spacing: -0.015em;
-  margin-bottom: 0.75rem;
+  margin: 0;
 }
 
-.exec-pillar-desc {
+.exec-point-text {
   font-size: var(--fs-small);
-  color: var(--text-secondary);
-  line-height: 1.75;
   font-weight: 300;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
 }
 
 
